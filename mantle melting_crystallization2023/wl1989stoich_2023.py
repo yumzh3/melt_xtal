@@ -1,5 +1,9 @@
-###Jocelyn Fuentes 2016 - Based on WL1989
-# Mingzhen Yu 2021 - add Ni and Mn
+# switch the unit of oxides between wt% and cation mole fraction
+# calculate elements either in oxides or components, e.g., K2O, KO0.5, KAlO2
+# use stoichiometry, based on Weaver and Langmuir 1990
+# originally written by Jocelyn Fuentes 2016
+# modified by Mingzhen Yu 2021: add Ni and Mn in the system
+# last modified:
 
 import numpy as np
 import math     
