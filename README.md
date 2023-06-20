@@ -1,6 +1,6 @@
 # melt_xtal
 Please read the README.md and LICENSE before downloading and using the codes. 
-Users must cite the original version in this format: 
+/Users must cite the original version in this format: 
 Codes and demo data are listed in folder 'mantle melting_crystallization2023'. Please download all the files.
 Codes here are used to calculated certain element concentrations in the liquid and olivine during mantle melting and crystallization with given mantle compositions and melting-crystallization conditions.
 This is a part of Supplementary Materials for paper "The origin of Ni and Mn variations in Hawaiian and MORB olivines and associated basalts" written by Mingzhen Yu (myu@g.harvard.edu) and Charles H. Langmuir (langmuir@eps.harvard.edu) being submitted to Journal (status will be updated). Correspondence to Mingzhen Yu (myu@g.harvard.edu, Department of Earth and Planetary Sciences, Harvard University, Cambridge, MA 02138, USA)
