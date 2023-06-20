@@ -4,7 +4,7 @@
 # equations are based on Weaver and Langmuir 1990
 # originally written by Jocelyn Fuentes 2016
 # modified by Mingzhen Yu 2021: add Ni and Mn in the system, and update KDFeMg(ol/l) with equation from Toplis 2005
-# last modified:
+# last modified: Jun 20, 2023
 
 from wl1989stoich_2023 import *
 import numpy as np

@@ -3,7 +3,7 @@
 # 'equ' refers to 'equilibrium crystalliztaion'. Otherwise, fractional crystalliztaion is calculated
 # Jan 17, 2023
 # written by: Mingzhen Yu
-# last modified: 
+# last modified: Jun 20, 2023
 
 import numpy as np
 import pandas as pd

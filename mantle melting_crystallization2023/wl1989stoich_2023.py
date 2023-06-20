@@ -3,7 +3,7 @@
 # use stoichiometry, based on Weaver and Langmuir 1990
 # originally written by Jocelyn Fuentes 2016
 # modified by Mingzhen Yu 2021: add Ni and Mn in the system
-# last modified:
+# last modified: Jun 20, 2023
 
 import numpy as np
 import math     

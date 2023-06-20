@@ -3,7 +3,7 @@
 # 'cmf' means calculate based on the unit as cation mole fraction, 'wt' means calculate based on the unit as wt%
 # Jan 16, 2023
 # written by: Mingzhen Yu
-# last modified:
+# last modified: Jun 20, 2023
     
 import numpy as np
 import pandas as pd
