@@ -1,5 +1,5 @@
 # melt_xtal
-Please read the README.md and LICENSE before downloading and using the codes. 
+Please read the README.md and LICENSE before downloading and using the codes.<br> 
 Users must cite the original version in this format: 
 Codes and demo data are listed in folder 'mantle melting_crystallization2023'. Please download all the files.
 Codes here are used to calculated certain element concentrations in the liquid and olivine during mantle melting and crystallization with given mantle compositions and melting-crystallization conditions.
