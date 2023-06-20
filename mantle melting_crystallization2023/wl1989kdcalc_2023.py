@@ -1,15 +1,20 @@
-###Jocelyn Fuentes 2016 - Based on WL1989
-# Mingzhen Yu 2021 - add Ni and Mn, and update KD change with P-T and liquid compositions
+# calculate partition coefficients for different components between minerals (ol. pl, cpx) and liquids used in fractional crystallization calculations
+# calculate based on the unit of cation mole
+# crystallization involves olivine, plagioclase, and clinopyroxene
+# equations are based on Weaver and Langmuir 1990
+# originally written by Jocelyn Fuentes 2016
+# modified by Mingzhen Yu 2021: add Ni and Mn in the system, and update KDFeMg(ol/l) with equation from Toplis 2005
+# last modified:
 
 from wl1989stoich_2023 import *
 import numpy as np
 import math
 
 
-## from wl1989kdcalc2021.py
+# calculate partition coefficients for different components between minerals (ol. pl, cpx) and liquids
 def kdCalc_langmuir1992(components, T, P, H = None):
     """
-    This uses Langmuir Et Al. 1992 Calculations.
+    This uses Langmuir et al. 1992 equations.
     P in bars, T in Kelvin.
     """
     keys = ['MgO', 'FeO', 'TiO2', 'PO52', 'MnO', 'CaAl2O4', 'NaAlO2', 'KAlO2', 'CaSiO3','NiO']
@@ -42,24 +47,12 @@ def kdCalc_langmuir1992(components, T, P, H = None):
     ol['PO52'] = 0.2
     ol['MgO'] = np.exp((6921./T) + (3.4*components['NaAlO2']/2.) + 
                 (6.3*components['KAlO2']/2.) + (0.00001154*P) - 3.27)
-    # ol['MgO'] = np.exp((6604./T) + (3.014*components['NaAlO2']/2.) + 
-    #             (14.54*components['KAlO2']/2.) + (0.000010076*P) - 3.1174)
-    KDFeMg = np.exp(-6766./(8.3144*T)-7.34/8.3144+math.log(0.036*SiO2_adj-0.22)+3000*(1-2*components['MgO']*100*ol['MgO']/66.67)/(8.3144*T))  # Toplis KDFe2Mg(ol/l)
-    ol['FeO'] = ol['MgO']*KDFeMg  # cmKdFe2(ol/l)
-    #ol['MnO'] = 0.78*0.98
-    #ol['MnO'] = 0.259*ol['MgO']-0.049
-    #ol['MnO'] = np.exp(-2.76+3583/(T-273.15))
-    #ol['MnO'] = np.exp(0.0087796046628*oxide_wt['MgO']-1.50316580917181)*ol['MgO']  ## original Matzen equation
-    ol['MnO'] = 0.79*ol['FeO']
-    #ol['NiO'] = 3.346*ol['MgO']-3.665 ## original Beattie equation
-    #ol['NiO'] = np.exp(4505/T-2.075)*ol['MgO']  ## original Matzen equation
-    #ol['NiO'] = np.exp(4288/T+0.01804*oxide_wt['SiO2']-2.8799)*ol['MgO'] ## new equation fitted by MPN dataset
-    #ol['NiO'] = np.exp(4449/T+0.01137*oxide_wt['SiO2']-2.6345)*ol['MgO'] ## new equation fitted by Hzb dataset
-    ol['NiO'] = np.exp(4272/T+0.01582*oxide_wt['SiO2']-2.7622)*ol['MgO'] ## new equation fitted by MPN+Hzb dataset
-    #ol['NiO'] = np.exp(4146/T+0.01559*oxide_wt['SiO2']-2.6742)*ol['MgO'] ## new equation fitted by MPN+Hzb dataset
-    cpx['NiO'] = 0.24*1.08 * ol['NiO'] # Sobolev etal 2005 TableS1 average KdNi(cpx/ol), 1.08 is a factor to convert wtKdNi(cpx/ol) to cmKdNi(cpx/ol), observed from Walter 1998 data
-    # cpx['MnO'] = 1.1*0.98  # Le Roux etal 2011 Table 3 for lowP-T KdMn(cpx/l), 0.98 is a factor to convert wtKdMn(cpx/l) to cmKdMn(cpx/l), observed from Walter 1998 data
-    cpx['MnO'] = 0.85*0.98
+    KDFeMg = np.exp(-6766./(8.3144*T)-7.34/8.3144+math.log(0.036*SiO2_adj-0.22)+3000*(1-2*components['MgO']*100*ol['MgO']/66.67)/(8.3144*T))  # from Toplis 2005
+    ol['FeO'] = ol['MgO']*KDFeMg  # KdFe2(ol/l) with the unit of cation mole
+    ol['MnO'] = 0.79*ol['FeO']  # KDMnFe(ol/l) from Davis et al. (2013)
+    ol['NiO'] = np.exp(4272/T+0.01582*oxide_wt['SiO2']-2.7622)*ol['MgO'] # fitted by MPN+Hzb dataset (Eqn.1 in the paper)
+    cpx['NiO'] = 0.24*1.08 * ol['NiO'] # average KdNi(cpx/ol) from Sobolev et al. (2005) Table S1, 1.08 is a factor to convert wtKdNi(cpx/ol) to cmKdNi(cpx/ol), observed from Walter 1998 data
+    cpx['MnO'] = 0.85*0.98  # KdMn(cpx/l) modified after Le Roux et al. (2011) Table 3, 0.98 is a factor to convert wtKdMn(cpx/l) to cmKdMn(cpx/l), observed from Walter 1998 data
     kd = {'cpx':cpx, 'ol':ol, 'plg':plg}
     return kd
 
