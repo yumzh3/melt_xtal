@@ -20,7 +20,14 @@ This code will be called by 'melting_crystallization2023.py'.
 This code defines functions used in the calculation of melt and olivine compositions for twy types of olivine-only crystallization: fractional crystallization and equilibrium crystallization. Compositions calculated include MgO, FeO, SiO2, MnO and NiO.<br>
 Fundamental algorithm is the olivine stoichiometry: MgO+FeO=66.67. Partition coefficients are commented in the code and explained in the paper "The origin of Ni and Mn variations in Hawaiian and MORB olivines and associated basalts" written by Mingzhen Yu (myu@g.harvard.edu) and Charles H. Langmuir (langmuir@eps.harvard.edu) being submitted to Journal (status will be updated).
 This code will be called by 'melting_crystallization2023.py'.
-### 
+### wl1990stoich_2023.py, wl1990kdcalc_2023.py, wl1990state_2023.py, wl1990models_2023.py
+These codes define functions used in the calculation of melt and mineral (olivine, plagioclase, clinopyroxene) compositions for two types of crystallization: fractional crystallizationa nd equilibrium crystallization. Compositions calculated include SiO2, TiO2, Al2O3, FeO, MgO, K2O, MnO, Na2O, P2O5, CaO, NiO.<br>
+Fundamental algorithms are given by Weaver, J.S. and Langmuir, C.H., 1990. Calculation of phase equilibrium in mineral-melt systems. Computers & Geosciences, 16(1), pp.1-19. The purpose is commented at the beginning of each code.
+These codes will be called by 'melting_crystallization2023.py'.
+### melting_crystallization2023.py
+
+
+
 
 
 
