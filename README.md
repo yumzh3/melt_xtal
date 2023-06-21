@@ -1,13 +1,13 @@
 # Overview
 Please read the README.md and LICENSE before downloading and using the codes.<br> 
-Users must cite the original version in this format:<br> 
+Users should follow the CITATION.cff to cite the codes.<br> 
 Codes and demo data are listed in folder 'mantle melting_crystallization2023'. Please download all the files.<br>
 Codes here are used to calculated certain element concentrations in the liquid and olivine during mantle melting and crystallization with given mantle compositions and melting-crystallization conditions.<br>
 This is a part of Supplementary Materials for paper "The origin of Ni and Mn variations in Hawaiian and MORB olivines and associated basalts" written by Mingzhen Yu (myu@g.harvard.edu) and Charles H. Langmuir (langmuir@eps.harvard.edu) being submitted to Journal (status will be updated). Correspondence to Mingzhen Yu (myu@g.harvard.edu, Department of Earth and Planetary Sciences, Harvard University, Cambridge, MA 02138, USA)<br>
 Codes are written with Python.<br>
 
 # Files Introduction
-In the folder 'mantle melting_crystallization2023', there seven '.py' files and one '.csv' file.<br>
+In the folder 'mantle melting_crystallization2023', there are seven '.py' files and one '.csv' file.<br>
 ## data file
 The '.csv' file named 'olivine_glass_data.csv' provides users with natural data for Hawaiian olivines and MORB olivines, Hawaiian basalts, and MORB glasses, which can be used to compared to the modeled crystallization results. After running code 'melting_cystallization2023.py', six figures will be plotted automatically.<br>
 Olivine data are given by Sobolev, A. V. et al. The amount of recycled crust in sources of mantle-derived melts. science 316, 412-417 (2007). MORB glasses data are given by Jenner, F.E. and O'Neill, H.S.C., 2012. Analysis of 60 elements in 616 ocean floor basaltic glasses. Geochemistry, Geophysics, Geosystems, 13(2); Yang, S., Humayun, M. and Salters, V.J., 2018. Elemental systematics in MORB glasses from the Mid‐Atlantic Ridge. Geochemistry, Geophysics, Geosystems, 19(11), pp.4236-4259; Yang, A.Y., Langmuir, C.H., Cai, Y., Michael, P., Goldstein, S.L. and Chen, Z., 2021. A subduction influence on ocean ridge basalts outside the Pacific subduction shield. Nature communications, 12(1), p.4757. Hawaiian basalts data are compiled from Georoc (references listed in the .csv file).
@@ -33,7 +33,7 @@ The ol-pl-cpx crystallization results for MORB are saved in dataframe variable '
 After running the code, six figures with natural data and modeled crystal line of descent and liquid line of descent will show up. Users need to download the data file 'olivine_glass_data.csv' from the folder and enter the correct local address of the data file in the line 1133 to make the figures plotted.<br> 
 # Updates and cite policy
 The updates of the code will be posted timely. Comments and suggestions are welcome and can be sent to Mingzhen Yu (myu@g.harvard.edu).<br>
-Any publications using this code need to cite in this format: 
+Any publications using this code need to follow the CITATION.cff to cite the codes.<br> 
 
 
 
