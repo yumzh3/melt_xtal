@@ -13,7 +13,9 @@ The '.csv' file named 'olivine_glass_data.csv' provides users with natural data 
 Olivine data are given by Sobolev, A. V. et al. The amount of recycled crust in sources of mantle-derived melts. science 316, 412-417 (2007). MORB glasses data are given by Jenner, F.E. and O'Neill, H.S.C., 2012. Analysis of 60 elements in 616 ocean floor basaltic glasses. Geochemistry, Geophysics, Geosystems, 13(2); Yang, S., Humayun, M. and Salters, V.J., 2018. Elemental systematics in MORB glasses from the Mid‐Atlantic Ridge. Geochemistry, Geophysics, Geosystems, 19(11), pp.4236-4259; Yang, A.Y., Langmuir, C.H., Cai, Y., Michael, P., Goldstein, S.L. and Chen, Z., 2021. A subduction influence on ocean ridge basalts outside the Pacific subduction shield. Nature communications, 12(1), p.4757. Hawaiian basalts data are compiled from Georoc (references listed in the .csv file).
 ## code files
 ### melting_function2023.py
-The codes define functions used in the calculation of melt compositions for two types of mantle melting: polybaric fractional melting and isobaric equilibrium melting. Fundamental algorithms are given by Langmuir, C. H., Klein, E. M. & Plank, T. Petrological systematics of mid‐ocean ridge basalts: Constraints on melt generation beneath ocean ridges. Mantle flow and melt generation at mid‐ocean ridges 71, 183-280 (1992).
+The codes define functions used in the calculation of melt compositions for two types of mantle melting: polybaric fractional melting and isobaric equilibrium melting. 
+
+Fundamental algorithms are given by Langmuir, C. H., Klein, E. M. & Plank, T. Petrological systematics of mid‐ocean ridge basalts: Constraints on melt generation beneath ocean ridges. Mantle flow and melt generation at mid‐ocean ridges 71, 183-280 (1992). Melting reactions and partition coefficients are commented in the code and explained in the paper "The origin of Ni and Mn variations in Hawaiian and MORB olivines and associated basalts" written by Mingzhen Yu (myu@g.harvard.edu) and Charles H. Langmuir (langmuir@eps.harvard.edu) being submitted to Journal (status will be updated). 
 
 
 
