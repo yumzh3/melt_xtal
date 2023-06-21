@@ -496,7 +496,7 @@ def mineral_phase_isoequ(Po,P,f,source_phase,source_phase2,f_gt0,source_phase3,s
 def Ni_polyfrac(T,kdMgO_oll_cm,cl_wt,f_mineral,res,f_step,bulkD,ol):  
     keys = ['oll','opxl','cpxl','gtl','spl','opxol','cpxol','gtol','spol']
     kdNi_wt = {key:0 for key in keys}  
-    kdNi_wt['oll'] = math.exp(4272/(T+273.15)+0.01582*cl_wt['SiO2']-2.7622)*(kdMgO_oll_cm*1.09) ## fitted by MPN+Hzb dataset (Eqn. 1 in the paper), *1.09 to convert from cmf to wt%, observed from Walter 1998 
+    kdNi_wt['oll'] = math.exp(4272/(T+273.15)+0.01582*cl_wt['SiO2']-2.7622)*(kdMgO_oll_cm*1.09) ## fitted by MPN+Hzb dataset (Eqn. 3 in the paper), *1.09 to convert from cmf to wt%, observed from Walter 1998 
     # Sobolev et al. (2005) Table S1 average KdNi value
     kdNi_wt['cpxol'] = 0.24 
     kdNi_wt['opxol'] = 0.4  
@@ -516,7 +516,7 @@ def Ni_polyfrac(T,kdMgO_oll_cm,cl_wt,f_mineral,res,f_step,bulkD,ol):
 def Ni_isoequ(T,kdMgO_oll_cm,cl_wt,f,f_mineral,res,bulkD,ol,source_wt):  
     keys = ['oll','opxl','cpxl','gtl','spl','opxol','cpxol','gtol','spol']
     kdNi_wt = {key:0 for key in keys}  
-    kdNi_wt['oll'] = math.exp(4272/(T+273.15)+0.01582*cl_wt['SiO2']-2.7622)*(kdMgO_oll_cm*1.09) ## fitted by MPN+Hzb dataset (Eqn. 1 in the paper), *1.09 to convert from cmf to wt%, observed from Walter 1998 
+    kdNi_wt['oll'] = math.exp(4272/(T+273.15)+0.01582*cl_wt['SiO2']-2.7622)*(kdMgO_oll_cm*1.09) ## fitted by MPN+Hzb dataset (Eqn. 3 in the paper), *1.09 to convert from cmf to wt%, observed from Walter 1998 
     # Sobolev etal 2005 TableS1 average KdNi value
     kdNi_wt['cpxol'] = 0.24 
     kdNi_wt['opxol'] = 0.4  
@@ -635,7 +635,7 @@ def itg(Cl_wt,F_step,F_melting,Po):
 #     DNi_sulfide = f_sulfideliquid*kdNi_wt_sulfideliquid_melt+(1-f_sulfideliquid)*kdNi_wt_mss_melt
 #     keys = ['oll','opxl','cpxl','gtl','spl','surfl','opxol','cpxol','gtol','spol']
 #     kdNi_wt = {key:0 for key in keys} 
-#     kdNi_wt['oll'] = math.exp(4272/(T+273.15)+0.01582*cl_wt['SiO2']-2.7622)*(kdMgO_oll_cm*1.09) ## fitted by MPN+Hzb dataset (Eqn. 1 in the paper), *1.09 to convert from cmf to wt%, observed from Walter 1998 
+#     kdNi_wt['oll'] = math.exp(4272/(T+273.15)+0.01582*cl_wt['SiO2']-2.7622)*(kdMgO_oll_cm*1.09) ## fitted by MPN+Hzb dataset (Eqn. 3 in the paper), *1.09 to convert from cmf to wt%, observed from Walter 1998 
 #     # Sobolev etal 2005 TableS1 average KdNi(cpx,opx,gt/ol) value
 #     kdNi_wt['cpxol'] = 0.24 
 #     kdNi_wt['opxol'] = 0.4  
@@ -659,7 +659,7 @@ def itg(Cl_wt,F_step,F_melting,Po):
 #     DNi_sulfide = f_sulfideliquid*kdNi_wt_sulfideliquid_melt+(1-f_sulfideliquid)*kdNi_wt_mss_melt
 #     keys = ['oll','opxl','cpxl','gtl','spl','surfl','opxol','cpxol','gtol','spol']
 #     kdNi_wt = {key:0 for key in keys}  
-#     kdNi_wt['oll'] = math.exp(4272/(T+273.15)+0.01582*cl_wt['SiO2']-2.7622)*(kdMgO_oll_cm*1.09) ## fitted by MPN+Hzb dataset (Eqn. 1 in the paper), *1.09 to convert from cmf to wt%, observed from Walter 1998  
+#     kdNi_wt['oll'] = math.exp(4272/(T+273.15)+0.01582*cl_wt['SiO2']-2.7622)*(kdMgO_oll_cm*1.09) ## fitted by MPN+Hzb dataset (Eqn. 3 in the paper), *1.09 to convert from cmf to wt%, observed from Walter 1998  
 #     # Sobolev etal 2005 TableS1 average KdNi value
 #     kdNi_wt['cpxol'] = 0.24 
 #     kdNi_wt['opxol'] = 0.4  
