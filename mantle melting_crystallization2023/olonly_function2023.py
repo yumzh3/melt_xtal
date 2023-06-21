@@ -67,7 +67,7 @@ def concentration_olonly(clcm_olonly,cm_kdMg_oll_olonly,f_step_olonly,cm_kdFe2_o
 
 # calculate Ni and Mn in the melts and olivines during fractional crystallization 
 def NiMn_olonly(T,cm_kdMg_oll_olonly,clppm_olonly,f_step_olonly,olppm_olonly,clcm_olonly,cm_kdFe2_oll_olonly,Po):
-    wt_kdNi_oll_olonly = math.exp(4272/(T+273.15)+0.01582*(clcm_olonly['SiO2']*cm_tot*cm_mass['SiO2']/100)-2.7622)*(cm_kdMg_oll_olonly*1.09) ## fitted by MPN+Hzb dataset (Eqn. 1 in the paper), *1.09 to convert from cmf to wt%, observed from Walter 1998 
+    wt_kdNi_oll_olonly = math.exp(4272/(T+273.15)+0.01582*(clcm_olonly['SiO2']*cm_tot*cm_mass['SiO2']/100)-2.7622)*(cm_kdMg_oll_olonly*1.09) ## fitted by MPN+Hzb dataset (Eqn. 3 in the paper), *1.09 to convert from cmf to wt%, observed from Walter 1998 
     clppm_olonly['Ni'] = clppm_olonly['Ni']/(wt_kdNi_oll_olonly*(1-f_step_olonly)+f_step_olonly)
     olppm_olonly['Ni'] = clppm_olonly['Ni']*wt_kdNi_oll_olonly
     wt_kdMn_oll_olonly = 0.79*cm_kdFe2_oll_olonly*1.09  # KDMnFe(ol/l) from Davis et al. (2013), *1.09 to convert from cmf to wt%, observed from Walter 1998
@@ -112,7 +112,7 @@ def concentration_olonly_equ(clcm_olonly,cm_kdMg_oll_olonly,f_step_olonly,cm_kdF
 
 # calculate Ni and Mn in the melts and olivines during equilibrium crystallization 
 def NiMn_olonly_equ(T,cm_kdMg_oll_olonly,clppm_olonly,f_step_olonly,olppm_olonly,clcm_olonly,clppm_magma,f_olonly,cm_kdFe2_oll_olonly):
-    wt_kdNi_oll_olonly = math.exp(4272/(T+273.15)+0.01582*(clcm_olonly['SiO2']*cm_tot*cm_mass['SiO2']/100)-2.7622)*(cm_kdMg_oll_olonly*1.09) ## fitted by MPN+Hzb dataset (Eqn.1 in the paper), *1.09 to convert from cmf to wt%, observed from Walter 1998 
+    wt_kdNi_oll_olonly = math.exp(4272/(T+273.15)+0.01582*(clcm_olonly['SiO2']*cm_tot*cm_mass['SiO2']/100)-2.7622)*(cm_kdMg_oll_olonly*1.09) ## fitted by MPN+Hzb dataset (Eqn.3 in the paper), *1.09 to convert from cmf to wt%, observed from Walter 1998 
     clppm_olonly['Ni'] = clppm_magma['Ni']/(wt_kdNi_oll_olonly*(1-f_olonly)+f_olonly)
     olppm_olonly['Ni'] = clppm_olonly['Ni']*wt_kdNi_oll_olonly
     wt_kdMn_oll_olonly = 0.79*cm_kdFe2_oll_olonly*1.09  # KDMnFe(ol/l) from Davis et al. (2013), *1.09 to convert from cmf to wt%, observed from Walter 1998
