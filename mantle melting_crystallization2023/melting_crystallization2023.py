@@ -17,25 +17,27 @@ from scipy.optimize import fsolve
 import matplotlib.pyplot as plt
 from melting_function2023 import *
 from olonly_function2023 import *
-from wl1989stoich_2023 import *
-from wl1989kdcalc_2023 import *
-from wl1989models_2023 import *
-from wlState_2023 import *
+from wl1990stoich_2023 import *
+from wl1990kdcalc_2023 import *
+from wl1990models_2023 import *
+from wl1990state_2023 import *
 
 
 ## default parameters with default values
 Fe2Fet_Haw = 0.85  # assume ferrous/total Fe = 0.85 for Hawaiian basalts (Rhodes and Vollinger 2005, Brounce et al. 2017, Berry et al. 2018, Zhang et al. 2018, Brounce et al. 2022)
 Fe2Fet_MORB = 0.9  # assume ferrous/total Fe = 0.9 for Hawaiian basalts (Rhodes and Vollinger 2005, Brounce et al. 2017, Berry et al. 2018, Zhang et al. 2018, Brounce et al. 2022)
-Po_high =45  # starting pressure of polybaric melting modeled for Hawaii
-Po_low = 20  # starting pressure of polybaric melting modeled for MORB
-F_target_Haw = 0.06  # extent of melting modeled for Hawaii
-F_target_MORB = 0.10  # extent of melting modeled for MORB
+Po_high =45  # kbar, starting pressure of polybaric melting modeled for Hawaii
+Po_low = 20  # kbar, starting pressure of polybaric melting modeled for MORB
+F_target_Haw = 0.06  # fraction, extent of melting modeled for Hawaii
+F_target_MORB = 0.10  # fraction, extent of melting modeled for MORB
 melting_model_Haw = 'polybaric'   # melting type for Hawaii, 'polybaric' represents polybaric fractionaly melting,can be changed to 'isobaric', meaning isobaric equilibrium melting
 melting_model_MORB = 'polybaric'   # melting type for MORB, 'polybaric' represents polybaric fractionaly melting,can be changed to 'isobaric', meaning isobaric equilibrium melting
 xtalization_model = 'fractional'  # crystallization type, can be changed to 'equilibrium'
 
 ## mantle source compositions for Hawaii and MORB and their corresponding mineral modes
 '''
+SiO2, TiO2, Al2O3, FeO(Fe2), CaO, MgO, MnO, K2O, Na2O, P2O5, Cr2O3, NiO in wt%.
+olivine(ol), orthopyroxene (opx), clinopyroxene (cpx), garnet (gt), spinel (sp) in percent.
 mantle source compositions with modes listed here including: 10.8% MORB + 89.2% DM (S&S(2004))  from Putirka et al. 2011 Table A5,
 depleted mantle from Salter and Stracke (2004),
 depleted, normal, and fertile peridotite with MgO 36, 38.5 and 41 wt% observed from peridotite data of Carlson and Ionov (2019),
