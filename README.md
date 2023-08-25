@@ -3,7 +3,7 @@ Please read the README.md and LICENSE before downloading and using the codes.<br
 Please follow the CITATION.cff to cite the codes.<br> 
 Codes and demo data are listed in folder 'mantle melting_crystallization2023'. Please download all the files.<br>
 Codes here are used to calculate certain element concentrations in the liquid and olivine during mantle melting and crystallization with given mantle compositions and melting-crystallization conditions.<br>
-This is a part of Supplementary Materials for paper "The origin of Ni and Mn variations in Hawaiian and MORB olivines and associated basalts" written by Mingzhen Yu (myu@g.harvard.edu) and Charles H. Langmuir (langmuir@eps.harvard.edu) being submitted to Earth and Planetary Science Letters (submitted). Correspondence to Mingzhen Yu (myu@g.harvard.edu, Department of Earth and Planetary Sciences, Harvard University, Cambridge, MA 02138, USA)<br>
+This is a part of Supplementary Materials for paper "The origin of Ni and Mn variations in Hawaiian and MORB olivines and associated basalts" written by Mingzhen Yu (myu@g.harvard.edu) and Charles H. Langmuir (langmuir@eps.harvard.edu) being submitted to Chemical Geology (under revision). Correspondence to Mingzhen Yu (myu@g.harvard.edu, Department of Earth and Planetary Sciences, Harvard University, Cambridge, MA 02138, USA)<br>
 Codes are written with Python.<br>
 
 # Files Introduction
