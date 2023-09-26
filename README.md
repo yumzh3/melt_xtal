@@ -3,7 +3,7 @@ Please read the README.md and LICENSE before downloading and using the codes.<br
 Please follow the CITATION.cff to cite the codes.<br> 
 Codes and demo data are listed in folder 'mantle melting_crystallization2023'. Please download all the files.<br>
 Codes here are used to calculate certain element concentrations in the liquid and olivine during mantle melting and crystallization with given mantle compositions and melting-crystallization conditions.<br>
-This is a part of Supplementary Materials for paper "The origin of Ni and Mn variations in Hawaiian and MORB olivines and associated basalts" written by Mingzhen Yu (myu@g.harvard.edu) and Charles H. Langmuir (langmuir@eps.harvard.edu) being submitted to Chemical Geology (under revision). Correspondence to Mingzhen Yu (myu@g.harvard.edu, Department of Earth and Planetary Sciences, Harvard University, Cambridge, MA 02138, USA)<br>
+This is a part of Supplementary Materials for paper "The origin of Ni and Mn variations in Hawaiian and MORB olivines and associated basalts" written by Mingzhen Yu (myu@g.harvard.edu) and Charles H. Langmuir (langmuir@eps.harvard.edu) being submitted to Chemical Geology (in press). Correspondence to Mingzhen Yu (myu@g.harvard.edu, Department of Earth and Planetary Sciences, Harvard University, Cambridge, MA 02138, USA)<br>
 Codes are written with Python.<br>
 
 # Files Introduction
@@ -14,7 +14,7 @@ Olivine data are given by Sobolev, A. V. et al. The amount of recycled crust in 
 ## code files
 ### melting_function2023.py
 This code defines functions used in the calculation of melt compositions for two types of mantle melting: polybaric fractional melting and isobaric equilibrium melting. Melt compositions calculated include SiO2, MgO, FeO, MnO, NiO, TiO2, Na2O and K2O.<br> 
-Fundamental algorithms are given by Langmuir, C. H., Klein, E. M. & Plank, T. Petrological systematics of mid‐ocean ridge basalts: Constraints on melt generation beneath ocean ridges. Mantle flow and melt generation at mid‐ocean ridges 71, 183-280 (1992). Melting reactions and partition coefficients are commented in the code and explained in the paper "The origin of Ni and Mn variations in Hawaiian and MORB olivines and associated basalts" written by Mingzhen Yu (myu@g.harvard.edu) and Charles H. Langmuir (langmuir@eps.harvard.edu) being submitted to Chemical Geology (under revision).
+Fundamental algorithms are given by Langmuir, C. H., Klein, E. M. & Plank, T. Petrological systematics of mid‐ocean ridge basalts: Constraints on melt generation beneath ocean ridges. Mantle flow and melt generation at mid‐ocean ridges 71, 183-280 (1992). Melting reactions and partition coefficients are commented in the code and explained in the paper "The origin of Ni and Mn variations in Hawaiian and MORB olivines and associated basalts" written by Mingzhen Yu (myu@g.harvard.edu) and Charles H. Langmuir (langmuir@eps.harvard.edu) being submitted to Chemical Geology (in press).
 This code will be called by 'melting_crystallization2023.py'.
 ### olonly_function2023.py
 This code defines functions used in the calculation of melt and olivine compositions for twy types of olivine-only crystallization: fractional crystallization and equilibrium crystallization. Compositions calculated include MgO, FeO, SiO2, MnO and NiO.<br>
