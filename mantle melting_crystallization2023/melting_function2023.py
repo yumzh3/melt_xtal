@@ -34,9 +34,12 @@ def wttocm(source_wt):
 # 'D' is the bulk distribution coefficients of the composition
 def liquid_wt_polyfrac(res,f_step,f_mineral,P,T,cl_wt,cl_cm,bulkD,Po): 
     cl_wt['K2O'] = res['K2O']/(bulkD['K2O']*(1-f_step)+f_step)  # bulk D of K2O is assumed to be 0.005
-    bulkD['Na2O'] = 0.008+10**((5100+73*P)/(T+273.15)-4.48)*f_mineral['cpx']*0.01  # bulk D for K2O, Na2O, TiO2 refer to Langmuir et al. 1992 and Dr. Charles Langmuir (personal contributions) 
+    if Po >= 30:
+        bulkD['Na2O'] = 0.015+0.6*f_mineral['cpx']*0.01  # Na partitioning are from looking experimental data (e.g., Walter 1998, Davis et al. 2013, Salters and Longhi 1999),here the contribution from opx, grt and ol to the bulk D of Na2O is simplified to be 0.015, KdNa2O(cpx/l)=0.6
+    else:
+        bulkD['Na2O'] = 0.015+0.4*f_mineral['cpx']*0.01  # Na partitioning are from looking experimental data (e.g., Walter 1998, Davis et al. 2013, Salters and Longhi 1999),here the contribution from opx, grt and ol to the bulk D of Na2O is simplified to be 0.015, KdNa2O(cpx/l)=0.4    
     cl_wt['Na2O'] = res['Na2O']/(bulkD['Na2O']*(1-f_step)+f_step)
-    bulkD['TiO2'] = 0.01+f_mineral['cpx']*(10**((10000+90*P)/(T+273.15)-7.5))*0.01
+    bulkD['TiO2'] = 0.015*f_mineral['ol']*0.01+0.086*f_mineral['opx']*0.01+0.35*f_mineral['gt']*0.01+f_mineral['cpx']*0.2*0.01  # Ti partitioning for ol and opx are from Salters & Stracke (2004), for grt (0.35) and cpx (0.2) are from high P experimental data (Takahashi 1986, Herzberg & Zhang 1996, Walter 1998)
     cl_wt['TiO2'] = res['TiO2']/(bulkD['TiO2']*(1-f_step)+f_step)
     if Po >= 30: # the relationship between the SiO2 in liquids and pressure is observed from looking at the experimental data, e.g., Hirose and Kushiro 1993, Kushiro 2001
         cl_wt['SiO2'] = 55.7-0.233*P  
@@ -56,9 +59,12 @@ def liquid_wt_polyfrac(res,f_step,f_mineral,P,T,cl_wt,cl_cm,bulkD,Po):
 # 'D' is the bulk distribution coefficients of the composition
 def liquid_wt_isoequ(source_wt,f,f_mineral,P,T,cl_wt,cl_cm,bulkD,res,Po):  
     cl_wt['K2O'] = source_wt['K2O']/(bulkD['K2O']*(1-f)+f)  # bulk D of K2O is assumed to be 0.005
-    bulkD['Na2O'] = 0.008+10**((5100+73*P)/(T+273.15)-4.48)*f_mineral['cpx']*0.01  # bulk D for K2O, Na2O, TiO2 refer to Langmuir et al. 1992 and Dr. Charles Langmuir (personal contributions) 
+    if Po >= 30:
+        bulkD['Na2O'] = 0.015+0.6*f_mineral['cpx']*0.01  # Na partitioning are from looking experimental data (e.g., Walter 1998, Davis et al. 2013, Salters and Longhi 1999),here the contribution from opx, grt and ol to the bulk D of Na2O is simplified to be 0.015, KdNa2O(cpx/l)=0.6
+    else:
+        bulkD['Na2O'] = 0.015+0.4*f_mineral['cpx']*0.01  # Na partitioning are from looking experimental data (e.g., Walter 1998, Davis et al. 2013, Salters and Longhi 1999),here the contribution from opx, grt and ol to the bulk D of Na2O is simplified to be 0.015, KdNa2O(cpx/l)=0.4 
     cl_wt['Na2O'] = source_wt['Na2O']/(bulkD['Na2O']*(1-f)+f)
-    bulkD['TiO2'] = 0.01+f_mineral['cpx']*(10**((10000+90*P)/(T+273.15)-7.5))*0.01
+    bulkD['TiO2'] = 0.015*f_mineral['ol']*0.01+0.086*f_mineral['opx']*0.01+0.35*f_mineral['gt']*0.01+f_mineral['cpx']*0.2*0.01  # Ti partitioning for ol and opx are from Salters & Stracke (2004), for grt (0.35) and cpx (0.2) are from high P experimental data (Takahashi 1986, Herzberg & Zhang 1996, Walter 1998)
     cl_wt['TiO2'] = source_wt['TiO2']/(bulkD['TiO2']*(1-f)+f)
     if Po >= 30:  # the relationship between the SiO2 in liquids and pressure and melting extent is observed  from looking at the experimental data, e.g., Hirose and Kushiro 1993 Fig 7, Kushiro 2001
         if f <= 0.37:
